@@ -4,18 +4,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { PhotoModel } from '../../pages/interface/photo'
 import styles from '../../styles/Home.module.css'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 const PhotoBox: React.FC<{data: PhotoModel}> = ({data}) => {
 
     const [photo] = useState(data);
 
-    const router = useRouter();
+    useEffect(() => {
+        updateVal('change');
+    });
 
-    const changeVal = () => {
-        console.log('click!')
-        photo.title = 'Changed!';
-    };
+    const updateVal = (val:string) => {
+        photo.title = val;
+    }
+
+    const router = useRouter();
 
     const goDetail = () => {
         router.push("/photos/[id]", `/photos/${photo.id}`);
@@ -29,7 +32,12 @@ const PhotoBox: React.FC<{data: PhotoModel}> = ({data}) => {
                 <h3>제목</h3>
                 <h4>{photo.title}</h4>
             </div>
-            <button className={styles.btnChg} onClick={(e) => {e.stopPropagation(); changeVal();}}>Click Button!</button>
+            <button 
+            className={styles.btnChg} 
+            onClick={(e) => {
+                e.stopPropagation(); 
+                updateVal('val')
+            }}>Click Button!</button>
         </div>
     )
 }

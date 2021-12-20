@@ -22,30 +22,32 @@ const Photos: NextPage = ({ photos } : InferGetServerSidePropsType<typeof getSer
     };
 
     return (
-        <div className={styles.main}>
-            {
-                photolist.length == 0 ? 
-                <h1>사진이 없습니다.</h1> :
-                <h1>사진 리스트 {(parseInt(offset)-1)*10} ~ {((parseInt(offset)-1)*10)+10}</h1>
-            }
-            {
-                photolist.length == 0 ? 
-                <h3>there is no photos yet</h3> : 
-                <div className={styles.grid}>
-                    {photolist.map((photo:PhotoModel) => (
-                        <PhotoBox key={photo.id} data={photo}></PhotoBox>
-                        // <button key={photo.id} onClick={() => GoTophotoDetail(photo.id)}>{photo.title}</button>
-                    ))}
-                </div>
-            }
-            {
-                photolist.length != 0 && 
-                <div className={styles.btnMore} onClick={() => getMorePhotos()} >
-                    다음페이지
-                    {/* Now page {(offset/10)+1} / Go to {((offset+10)/10)+1} */}
-                </div>
-            }
-        </div>
+        <>
+            <div className={styles.main}>
+                {
+                    photolist.length == 0 ? 
+                    <h1>사진이 없습니다.</h1> :
+                    <h1>사진 리스트 {(parseInt(offset)-1)*10} ~ {((parseInt(offset)-1)*10)+10}</h1>
+                }
+                {
+                    photolist.length == 0 ? 
+                    <h3>there is no photos yet</h3> : 
+                    <div className={styles.grid}>
+                        {photolist.map((photo:PhotoModel) => (
+                            <PhotoBox key={photo.id} data={photo}></PhotoBox>
+                            // <button key={photo.id} onClick={() => GoTophotoDetail(photo.id)}>{photo.title}</button>
+                        ))}
+                    </div>
+                }
+                {
+                    photolist.length != 0 && 
+                    <div className={styles.btnMore} onClick={() => getMorePhotos()} >
+                        다음페이지
+                        {/* Now page {(offset/10)+1} / Go to {((offset+10)/10)+1} */}
+                    </div>
+                }
+            </div>
+        </>
     )
 }
 
