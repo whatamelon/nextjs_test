@@ -9,9 +9,7 @@ import React, { useRef, useEffect, memo } from 'react'
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   return (
-    <KeepAliveProvider router={router}>
-      <Component {...pageProps} />
-    </KeepAliveProvider>
+    <Component {...pageProps} />
   )
 }
 

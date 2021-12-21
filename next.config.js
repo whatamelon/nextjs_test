@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['via.placeholder.com'],
+    domains: ['rickandmortyapi.com/api'],
   },
   // resolve: {
   //   extensions: [".ts", ".tsx", ".js"]

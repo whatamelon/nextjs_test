@@ -135,6 +135,12 @@
   cursor: pointer;
 }
 
+.btnChg:hover,
+.btnChg:focus,
+.btnChg:active {
+  border: 1px solid #f3db00;
+}
+
 .vflex{
   display: flex;
   vertical-align: middle;
