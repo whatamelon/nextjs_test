@@ -7,7 +7,6 @@ module.exports = {
   typescript:{
     ignoreBuildErrors:true
   },
-  webpack5: false,
   // resolve: {
   //   extensions: [".ts", ".tsx", ".js"]
   // },
