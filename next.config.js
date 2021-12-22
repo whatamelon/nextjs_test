@@ -4,6 +4,9 @@ module.exports = {
   images: {
     domains: ['rickandmortyapi.com'],
   },
+  typescript:{
+    ignoreBuildErrors:true
+  }
   // resolve: {
   //   extensions: [".ts", ".tsx", ".js"]
   // },
