@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   const goDetail = () => {
-      router.push({ pathname:'/character/index' });
+      router.push({ pathname:'/character' });
   };
   
   return (
