@@ -1,6 +1,3 @@
-import { EpisodeModel } from "./episode";
-import { LocationModel } from "./location";
-
 export class CharacterModel {
 
     public id!: number;
@@ -9,10 +6,10 @@ export class CharacterModel {
     public species!: string;
     public type!: string;
     public gender!: string;
-    public origin!: string;
-    public location!: LocationModel;
+    public origin!: NameAndUrl;
+    public location!: NameAndUrl;
     public image!: string;
-    public episode!: Array<EpisodeModel>;
+    public episode!: Array<string>;
     public url!: string;
     public created!: string;
 
@@ -32,4 +29,9 @@ export class CharacterModel {
         this.url = val.url;
         this.created = val.created;
     }
+}
+
+type NameAndUrl = () => {
+    name: string;
+    url: string;
 }
