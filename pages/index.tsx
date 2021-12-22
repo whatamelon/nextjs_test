@@ -1,8 +1,15 @@
 import type { NextPage } from 'next'
-import NextLink from 'next/Link'
 import Head from 'next/head'
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
+
+  const router = useRouter();
+
+  const goDetail = () => {
+      router.push({ pathname:'/character/index' });
+  };
+  
   return (
     <div className='px-8'>
       <Head>
@@ -22,19 +29,10 @@ const Home: NextPage = () => {
         </p>
 
         <div className='flex justify-center items-center flex-wrap'>
-          {/* <Link href="/users">
-            <div className={styles.card}>
-              <h2>Users &rarr;</h2>
-              <p>GET fakeAPI from jsonplaceholder. We have 10 users list.</p>
-            </div>
-          </Link> */}
-
-          <NextLink href="/character" shallow={true}>
-            <div className='m-4 p-6 text-left border-2 rounded-md cursor-pointer hover:text-blue-500 border-blue-500'>
-              <h2 className='mb-4 text-2xl'>Character &rarr;</h2>
-              <p className='m-0 text-xl leading-6'>GET rickandmortyapi. Characterlist Go!</p>
-            </div>
-          </NextLink>
+          <div onClick={() => goDetail()} className='m-4 p-6 text-left border-2 rounded-md cursor-pointer hover:text-blue-500 border-blue-500'>
+            <h2 className='mb-4 text-2xl'>Character &rarr;</h2>
+            <p className='m-0 text-xl leading-6'>GET rickandmortyapi. Characterlist Go!</p>
+          </div>
         </div>
       </main>
     </div>
