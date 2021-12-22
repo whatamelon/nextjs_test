@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Head from 'next/head'
 import { useState,useEffect } from 'react';
 import { withKeepAlive } from 'react-next-keep-alive';
-import { CharacterModel } from '../interface/character';
+import { CharacterModel } from '../../interface/character';
 import CharacterBox from '../../components/feature/CharacterBox';
 
 const Characters: NextPage = ({ characters } : InferGetServerSidePropsType<typeof getServerSideProps>) => {

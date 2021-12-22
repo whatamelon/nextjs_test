@@ -3,7 +3,7 @@ import Link from "next/Link";
 import { useRouter } from 'next/router'; 
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
-import { CharacterModel } from "../interface/character";
+import { CharacterModel } from "../../interface/character";
 
 const CHARACTER_ID: NextPage = ({ character } : InferGetServerSidePropsType<typeof getServerSideProps>) => {
     let characterObj = new CharacterModel(character);
