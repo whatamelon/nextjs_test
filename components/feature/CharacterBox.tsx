@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { useRouter } from "next/router";
-import Link from 'next/link'
 import Image from 'next/image'
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import { CharacterModel } from '../../interface/character';
 
 const CharacterBox: React.FC<{data: CharacterModel}> = ({data}) => {

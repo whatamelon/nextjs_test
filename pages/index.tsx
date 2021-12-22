@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
-import Link from 'next/Link'
+import NextLink from 'next/Link'
 import Head from 'next/head'
-import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
@@ -30,12 +29,12 @@ const Home: NextPage = () => {
             </div>
           </Link> */}
 
-          <Link href="/character" shallow={true}>
+          <NextLink href="/character" shallow={true}>
             <div className='m-4 p-6 text-left border-2 rounded-md cursor-pointer hover:text-blue-500 border-blue-500'>
               <h2 className='mb-4 text-2xl'>Character &rarr;</h2>
               <p className='m-0 text-xl leading-6'>GET rickandmortyapi. Characterlist Go!</p>
             </div>
-          </Link>
+          </NextLink>
         </div>
       </main>
     </div>

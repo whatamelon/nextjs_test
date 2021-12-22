@@ -1,7 +1,5 @@
 import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
-import Link from "next/Link"; 
-import { useRouter } from 'next/router'; 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image'
 import { CharacterModel } from "../../interface/character";
 
