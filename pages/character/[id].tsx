@@ -2,6 +2,7 @@ import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next"
 import { useEffect } from 'react';
 import Image from 'next/image'
 import { CharacterModel } from "../../interface/character";
+import Header from "../../components/global/Header";
 
 const CHARACTER_ID: NextPage = ({ character } : InferGetServerSidePropsType<typeof getServerSideProps>) => {
     let characterObj = new CharacterModel(character);
@@ -10,6 +11,7 @@ const CHARACTER_ID: NextPage = ({ character } : InferGetServerSidePropsType<type
     },[])
     return (
         <>
+            <Header title='CharacterPage!' key='detail-key'></Header>
             <div className='flex flex-1 flex-row justify-center items-start py-12 min-h-min'>
                 <div className="w-1/3">
                     <div className='justify-center items-center text-center'>

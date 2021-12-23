@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['rickandmortyapi.com'],
+    domains: ['rickandmortyapi.com','localhost'],
   },
   typescript:{
     ignoreBuildErrors:true

@@ -1,7 +1,8 @@
 import type { NextPage,GetServerSideProps,InferGetServerSidePropsType } from 'next'
 import { useRouter } from "next/router";
 import { CharacterModel } from '../../interface/character';
-import CharacterBox from '../../components/feature/CharacterBox';
+import CharacterBox from '../../components/feature/character/CharacterBox';
+import Header from '../../components/global/Header';
 
 const Characters: NextPage = ({ characters } : InferGetServerSidePropsType<typeof getServerSideProps>) => {
     console.log(characters)
@@ -15,19 +16,21 @@ const Characters: NextPage = ({ characters } : InferGetServerSidePropsType<typeo
 
     return (
         <div className='flex flex-1 flex-col justify-center items-center py-4 min-h-min'>
+            <Header title='List!' key='head-list'></Header>
             {
-                characterlist.length == 0 ? 
+                characterlist && characterlist.length == 0 ? 
                 <h1 className='text-3xl font-bold my-7'>캐릭터가 없습니다.</h1> :
                 <h1 className='text-3xl font-bold my-7'>캐릭터 리스트 { parseInt(offset) }페이지 </h1>
             }
             {
-                characterlist.length == 0 ? 
+                characterlist && characterlist.length == 0 ? 
                 <h3 className='text-xl font-semibold'>there is no character yet</h3> : 
                 <div className='flex justify-center items-center flex-wrap'>
                     {characterlist.map((character:CharacterModel) => (
                         <CharacterBox 
                         key={character.id} 
                         data={character}
+                        activeBorderColor='border-blue-500'
                         ></CharacterBox>
                     ))}
                 </div>
