@@ -15,6 +15,7 @@
     "next": "12.0.7",
     "postcss": "^8.4.5",
     "react": "17.0.2",
+    "react-activation": "^0.9.7",
     "react-dom": "17.0.2",
     "react-next-keep-alive": "^1.0.14",
     "tailwindcss": "^3.0.7"

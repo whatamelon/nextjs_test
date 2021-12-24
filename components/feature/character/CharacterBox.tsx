@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react';
 import { CharacterModel } from '../../../interface/character';
 
-const CharacterBox: React.FC<{data: CharacterModel,activeBorderColor:string}> = ({data, activeBorderColor = 'border-blue-500'}) => {
+const CharacterBox: React.FC<{data: CharacterModel}> = ({data}) => {
 
     const [name, changeName] = useState(data.name);
   
@@ -18,7 +18,7 @@ const CharacterBox: React.FC<{data: CharacterModel,activeBorderColor:string}> = 
     };
     
     return (
-        <div className={`m-4 p-6 w-1/5 flex text-left rounded-sm border-2 border-gray-300 cursor-pointer hover:${activeBorderColor} hover:text-blue-500`} onClick={() => goDetail()}>
+        <div className={`m-4 p-6 w-1/5 flex text-left rounded-sm border-2 border-gray-300 cursor-pointer hover:border-blue-500 hover:text-blue-500`} onClick={() => goDetail()}>
             <div className='w-1/3 flex justify-center items-center mr-8'>
                 <Image src={`${data.image}`} alt={`characterbox-${data.id}`} width={100} height={100}/>
             </div>
