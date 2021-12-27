@@ -11,6 +11,7 @@ const CharacterBox: React.FC<{data: CharacterModel}> = ({data}) => {
     const router = useRouter();
 
     const goDetail = () => {
+        console.log('router!');
         router.push({
             pathname:'/character/[id]',
             query:{id:data.id}

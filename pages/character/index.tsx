@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { CharacterModel } from '../../interface/character';
 import CharacterBox from '../../components/feature/character/CharacterBox';
 import Header from '../../components/global/Header';
-import KeepAlive from 'react-activation'
 
 const Characters: NextPage = ({ characters } : InferGetServerSidePropsType<typeof getServerSideProps>) => {
     console.log(characters)
@@ -26,16 +25,14 @@ const Characters: NextPage = ({ characters } : InferGetServerSidePropsType<typeo
             {
                 characterlist && characterlist.length == 0 ? 
                 <h3 className='text-xl font-semibold'>there is no character yet</h3> : 
-                <KeepAlive>
-                    <div className='flex justify-center items-center flex-wrap'>
-                        {characterlist.map((character:CharacterModel) => (
-                            <CharacterBox 
-                            key={character.id} 
-                            data={character}
-                            ></CharacterBox>
-                        ))}
-                    </div>
-                </KeepAlive>
+                <div className='flex justify-center items-center flex-wrap'>
+                    {characterlist.map((character:CharacterModel) => (
+                        <CharacterBox 
+                        key={character.id} 
+                        data={character}
+                        ></CharacterBox>
+                    ))}
+                </div>
             }
             {
                 characterlist.length != 0 && 
@@ -49,7 +46,6 @@ const Characters: NextPage = ({ characters } : InferGetServerSidePropsType<typeo
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-
     const page:string = context.query.page?.toString() ?? '1';
     console.log(page)
 
